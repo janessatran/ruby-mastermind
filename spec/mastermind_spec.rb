@@ -21,7 +21,5 @@ describe Mastermind do
     it 'stats a new game and updates game count' do
       expect(game.game_count).to eq(1)
     end
-
   end
-
 end

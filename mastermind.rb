@@ -1,12 +1,13 @@
 # Command Line Mastermind Game
 class Mastermind
-  attr_reader :player_score, :computer_score, :player_guess,
-              :game_count, :board, :turn_count
+  attr_reader :player_score, :master_score, :player_guess,
+              :game_count, :board, :turn_count, :guess
 
   private
 
-  attr_writer :master_code, :player_score, :computer_score,
-              :player_guess, :game_count, :board
+  attr_writer :master_code, :player_score, :master_score,
+              :player_guess, :game_count, :board, :turn_count,
+              :guess
 
   def initialize
     set_master_code
@@ -27,11 +28,12 @@ class Mastermind
 
   def reset_scores
     @player_score = 0
-    @computer_score = 0
+    @master_score = 0
   end
 
   def reset_board
     @board = Array.new(12) { Array.new(4) }
+    @win = false
   end
 
   def display_rules
@@ -48,14 +50,43 @@ class Mastermind
     @game_count.nil? ? @game_count = 1 : @game_count += 1
   end
 
-  def check_guess_valid?(g)
-    return true if (g.is_a? Array) && (g.length = 4) && ((2..8).to_a & g)
+  def check_guess_valid?(guess)
+    return true if (guess.is_a? Array) && (guess.length == 4) && (guess.count { |e| e.between?(2,8) } == 4)
   end
 
   def start_game
     update_game_count
     prompt_guess if check_ready?
-    update_board if check_guess_valid?(player_guess)
+    until game_over?
+      prompt_guess
+      if check_guess_valid?(@guess)
+        update_board
+        analyze_input
+      else
+        prompt_guess
+      end
+    end
+    determine_winner
+  end
+
+  def determine_winner
+    if @win
+      puts 'HOORAY! YOU CRACKED THE CODE'
+      puts @master_code
+      puts 'in #{turn_count} tries!'
+      @player_score += 1
+    else
+      puts 'Mastermind has out master-minded you... :('
+      puts @master_code
+      puts '... Better luck next time!'
+      @master_score += 1
+    end
+    puts 'Player Score, Mastermind Score'
+    puts '#{player_score}, #{master_score}'
+  end
+
+  def game_over?
+    @win || turn_count == 12
   end
 
   def check_ready?
@@ -64,17 +95,36 @@ class Mastermind
   end
 
   def prompt_guess
-    puts 'Attempt to guess the mastercode. Enter an array of numbers 2 through 7. (i.e. [1,4,2,4]'
-    @player_guess = gets.chomp
-  end
-
-  def update_board
-    board[turn_count] = player_guess
-    print_board
+    puts 'Please input a 4 digit code witn numbers that are between 2 and 7. (i.e. 4532)'
+    @guess = gets.chomp.split('').map(&:to_i)
   end
 
   def print_board
-    puts(board.map { |x| x.join(' ') })
+    puts(@board.map { |x| x.join(' ') })
   end
 
+  def update_board
+    board[@turn_count] = guess
+    @turn_count += 1
+  end
+
+  def analyze_input
+    output = []
+    puts 'The Mastermind is responding. . .'
+    sleep 0.5
+    @master_code.length.times do |idx|
+      if @master_code[idx] == guess[idx]
+        output << 1 # code and position correct
+      elsif @master_code.include?(guess[idx])
+        output << 0 # code correct, but not position
+      end
+    end
+    if output.length == 4 && output.uniq == [1]
+      @win = true
+    end
+    puts 'Each 1 indicates the correct code AND position'
+    puts 'Each 0 indicates the correct code, but wrong position'
+    print output
+    puts ''
+  end
 end

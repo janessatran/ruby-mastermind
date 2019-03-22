@@ -1,25 +1,25 @@
 # Command Line Mastermind Game
 class Mastermind
   attr_reader :player_score, :master_score, :player_guess,
-              :game_count, :board, :turn_count, :guess
+              :game_count, :board, :guess_count, :guess
 
   private
 
   attr_writer :master_code, :player_score, :master_score,
-              :player_guess, :game_count, :board, :turn_count,
+              :player_guess, :game_count, :board, :guess_count,
               :guess
 
   def initialize
     set_master_code
     reset_board
     reset_scores
-    reset_turn_count
+    reset_guess_count
     display_rules
     start_game
   end
 
-  def reset_turn_count
-    @turn_count = 0
+  def reset_guess_count
+    @guess_count = 0
   end
 
   def set_master_code
@@ -56,24 +56,26 @@ class Mastermind
 
   def start_game
     update_game_count
-    prompt_guess if check_ready?
-    until game_over?
-      prompt_guess
-      if check_guess_valid?(@guess)
-        update_board
-        analyze_input
-      else
+    if check_ready?
+      until game_over?
         prompt_guess
+        if check_guess_valid?(guess)
+          update_board
+          analyze_input
+          print_board
+        else
+          prompt_guess
+        end
       end
+      determine_winner
     end
-    determine_winner
   end
 
   def determine_winner
     if @win
       puts 'HOORAY! YOU CRACKED THE CODE'
       puts @master_code
-      puts 'in #{turn_count} tries!'
+      puts "in #{guess_count} tries!"
       @player_score += 1
     else
       puts 'Mastermind has out master-minded you... :('
@@ -82,11 +84,11 @@ class Mastermind
       @master_score += 1
     end
     puts 'Player Score, Mastermind Score'
-    puts '#{player_score}, #{master_score}'
+    puts "#{player_score}, #{master_score}"
   end
 
   def game_over?
-    @win || turn_count == 12
+    @win || guess_count == 12
   end
 
   def check_ready?
@@ -100,12 +102,18 @@ class Mastermind
   end
 
   def print_board
-    puts(@board.map { |x| x.join(' ') })
+    puts @board.map { |x| x.join(' ') }
+  end
+
+  def output_guesses_left
+    @guess_count += 1
+    guesses_left =  12 - @guess_count
+    puts "You have #{guesses_left} guesses left"
   end
 
   def update_board
-    board[@turn_count] = guess
-    @turn_count += 1
+    board[@guess_count] = guess
+    output_guesses_left
   end
 
   def analyze_input
@@ -115,16 +123,17 @@ class Mastermind
     @master_code.length.times do |idx|
       if @master_code[idx] == guess[idx]
         output << 1 # code and position correct
-      elsif @master_code.include?(guess[idx])
+      elsif @master_code.include?(guess[idx]) && @guess.count(guess[idx]) == 1
         output << 0 # code correct, but not position
       end
     end
     if output.length == 4 && output.uniq == [1]
       @win = true
     end
-    puts 'Each 1 indicates the correct code AND position'
-    puts 'Each 0 indicates the correct code, but wrong position'
-    print output
+    puts 'Each "1" indicates the correct code AND position'
+    puts 'Each "0" indicates the correct code, but wrong position'
+    puts 'The order of the "1"s and "0"s does not matter'
+    print output.shuffle
     puts ''
   end
 end

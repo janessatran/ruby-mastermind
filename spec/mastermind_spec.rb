@@ -1,4 +1,6 @@
 require './mastermind.rb'
+require 'simplecov'
+SimpleCov.start
 
 describe Mastermind do
   let(:game) { Mastermind.new }

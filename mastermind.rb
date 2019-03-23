@@ -49,8 +49,8 @@ class Mastermind
     @game_count.nil? ? @game_count = 1 : @game_count += 1
   end
 
-  def check_guess_valid?(guess)
-    (guess.is_a? Array) && (guess.length == 4) && (guess.count { |e| e.between?(2,8) } == 4)
+  def check_guess_valid?
+    (guess.length == 4) && (guess.count { |e| e.between?(2,8) } == 4)
   end
 
   def start_game
@@ -73,7 +73,6 @@ class Mastermind
   def determine_winner
     if @win
       puts 'HOORAY! YOU CRACKED THE CODE'
-      puts @master_code
       puts "in #{guess_count} tries!"
       @player_score += 1
     else
@@ -87,12 +86,15 @@ class Mastermind
   end
 
   def game_over?
-    @win || @guess_count >= 12
+    @response.length == 4 && @response.uniq == [1] || @guess_count >= 12
   end
 
   def check_ready?
     puts 'Are you ready to play? (Y/N)'
-    return true if gets.chomp == 'Y' || gets.chomp == 'yes' || gets.chomp == 'y'
+    user_input = gets.chomp.downcase
+    puts user_input
+    return true if user_input == 'y' || user_input == 'yes'
+    return false
   end
 
   def prompt_guess
@@ -101,7 +103,9 @@ class Mastermind
   end
 
   def get_response
-    @response = analyze_input
+    puts 'The Mastermind is responding. . .'
+    sleep 0.5
+    @response = analyze_input.shuffle
   end
 
   def print_board
@@ -121,8 +125,6 @@ class Mastermind
   end
 
   def analyze_input
-    puts 'The Mastermind is responding. . .'
-    sleep 0.5
     @response = []
     @master_code.each_with_index do |code, idx|
       if code == @guess[idx]
@@ -131,9 +133,6 @@ class Mastermind
         @response << 0 # code correct, but not position
       end
     end
-    if @response.length == 4 && @response.uniq == [1]
-      @win = true
-    end
-    @response = @response.shuffle
   end
+  
 end

@@ -3,12 +3,6 @@ class Mastermind
   attr_reader :player_score, :master_score, :player_guess,
               :game_count, :board, :guess_count, :guess
 
-  private
-
-  attr_writer :master_code, :player_score, :master_score,
-              :player_guess, :game_count, :board, :guess_count,
-              :guess
-
   def initialize
     set_master_code
     reset_board
@@ -51,7 +45,7 @@ class Mastermind
   end
 
   def check_guess_valid?(guess)
-    return true if (guess.is_a? Array) && (guess.length == 4) && (guess.count { |e| e.between?(2,8) } == 4)
+    (guess.is_a? Array) && (guess.length == 4) && (guess.count { |e| e.between?(2,8) } == 4)
   end
 
   def start_game
@@ -59,7 +53,7 @@ class Mastermind
     if check_ready?
       until game_over?
         prompt_guess
-        if check_guess_valid?(guess)
+        if check_guess_valid?(@guess)
           update_board
           analyze_input
           print_board
@@ -88,7 +82,7 @@ class Mastermind
   end
 
   def game_over?
-    @win || guess_count == 12
+    @win || @guess_count >= 12
   end
 
   def check_ready?
@@ -112,7 +106,7 @@ class Mastermind
   end
 
   def update_board
-    board[@guess_count] = guess
+    @board[@guess_count] = @guess
     output_guesses_left
   end
 
@@ -120,10 +114,10 @@ class Mastermind
     output = []
     puts 'The Mastermind is responding. . .'
     sleep 0.5
-    @master_code.length.times do |idx|
-      if @master_code[idx] == guess[idx]
+    @master_code.each_with_index do |code, idx|
+      if code == @guess[idx]
         output << 1 # code and position correct
-      elsif @master_code.include?(guess[idx]) && @guess.count(guess[idx]) == 1
+      elsif @master_code.include?(@guess[idx]) && @guess.count(@guess[idx]) == 1
         output << 0 # code correct, but not position
       end
     end

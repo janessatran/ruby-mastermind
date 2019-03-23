@@ -26,18 +26,23 @@ class Mastermind
   end
 
   def reset_board
-    @board = Array.new(12) { Array.new(4) }
+    @board = []
+    # @board = Array.new(12) { Array.new(4) }
     @win = false
   end
 
   def display_rules
-    print 'Welcome to Mastermind! A 4 letter code has been set by the mastermind. ' \
-          'You win if you can guess the 4 letter code in 12 turns. ' \
-          'After each guess, the mastermind will return the numbers 0 or 1. ' \
-          'Each "1" indicates that one of the guessed numbers is correct, but in the wrong place. ' \
-          'Each "2" indicates that one of the guessed numbers is correct and in the correct place. ' \
-          'You may guess any value between 2 - 7 inclusive. ' \
-          'Goodluck!!'
+    puts %{
+      Welcome to Mastermind!
+
+      A 4 letter code has been set by the mastermind.
+      You win if you can guess the 4 letter code in 12 turns.
+      After each guess, the mastermind will return the numbers 0 or 1.
+      Each "1" indicates that one of the guessed numbers is correct, but in the wrong place.
+      Each "2" indicates that one of the guessed numbers is correct and in the correct place. 
+      You may guess any value between 2 - 7 inclusive.
+      Goodluck!!'
+    }
   end
 
   def update_game_count
@@ -54,8 +59,8 @@ class Mastermind
       until game_over?
         prompt_guess
         if check_guess_valid?(@guess)
+          get_response
           update_board
-          analyze_input
           print_board
         else
           prompt_guess
@@ -91,12 +96,17 @@ class Mastermind
   end
 
   def prompt_guess
-    puts 'Please input a 4 digit code witn numbers that are between 2 and 7. (i.e. 4532)'
+    puts 'Please input a 4 digit code with numbers that are between 2 and 7. (i.e. 4532)'
     @guess = gets.chomp.split('').map(&:to_i)
   end
 
+  def get_response
+    @response = analyze_input
+  end
+
   def print_board
-    puts @board.map { |x| x.join(' ') }
+    puts board
+    print ''
   end
 
   def output_guesses_left
@@ -106,28 +116,24 @@ class Mastermind
   end
 
   def update_board
-    @board[@guess_count] = @guess
+    @board << @guess.to_s + ' - ' +  @response.to_s
     output_guesses_left
   end
 
   def analyze_input
-    output = []
     puts 'The Mastermind is responding. . .'
     sleep 0.5
+    @response = []
     @master_code.each_with_index do |code, idx|
       if code == @guess[idx]
-        output << 1 # code and position correct
+        @response << 1 # code and position correct
       elsif @master_code.include?(@guess[idx]) && @guess.count(@guess[idx]) == 1
-        output << 0 # code correct, but not position
+        @response << 0 # code correct, but not position
       end
     end
-    if output.length == 4 && output.uniq == [1]
+    if @response.length == 4 && @response.uniq == [1]
       @win = true
     end
-    puts 'Each "1" indicates the correct code AND position'
-    puts 'Each "0" indicates the correct code, but wrong position'
-    puts 'The order of the "1"s and "0"s does not matter'
-    print output.shuffle
-    puts ''
+    @response = @response.shuffle
   end
 end

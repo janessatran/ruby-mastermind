@@ -28,9 +28,14 @@ describe Mastermind do
   context 'after a player says they are ready to play' do
     it 'checks if the guess is valid' do
       allow(game).to receive(:gets) { '2345' }
-  
       expect(game.prompt_guess).to eq([2,3,4,5])
       expect(game.check_guess_valid?(game.prompt_guess)).to eq(true)
+    end
+
+    it 'prompts the user for another answer if the guess is invalid' do
+      allow(game).to receive(:gets) { '2' }
+      expect(game.prompt_guess).to eq([2])
+      expect(game.check_guess_valid?(game.prompt_guess)).to eq(false)
     end
   end
 end

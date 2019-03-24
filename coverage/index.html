@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.2/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.2/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.2/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-03-24T14:48:56-05:00">2019-03-24T14:48:56-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-03-24T17:23:48-05:00">2019-03-24T17:23:48-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">84.92%</span></span>
+    (<span class="covered_percent"><span class="green">94.44%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.5
+         1.12
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>3</b> files in total.
-    <b>126</b> relevant lines. 
-    <span class="green"><b>107</b> lines covered</span> and
-    <span class="red"><b>19</b> lines missed </span>
+    <b>2</b> files in total.
+    <b>18</b> relevant lines. 
+    <span class="green"><b>17</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,32 +52,22 @@
       
       <tr>
         <td class="strong"><a href="#1669c0e33815089e46c4f38beffac39f83a8b86c" class="src_link" title="board.rb">board.rb</a></td>
-        <td class="red strong">71.43 %</td>
+        <td class="yellow strong">85.71 %</td>
         <td>14</td>
         <td>7</td>
-        <td>5</td>
-        <td>2</td>
-        <td>3.7</td>
+        <td>6</td>
+        <td>1</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#1d4f270c60187661eaab98bd407e6536e14f641d" class="src_link" title="mastermind.rb">mastermind.rb</a></td>
-        <td class="red strong">77.33 %</td>
-        <td>131</td>
-        <td>75</td>
-        <td>58</td>
-        <td>17</td>
-        <td>4.6</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#81b678c38c700960af289f1754e78af4bffe5e07" class="src_link" title="spec/mastermind_spec.rb">spec/mastermind_spec.rb</a></td>
+        <td class="strong"><a href="#d3184b20724fd5916dad1971d978c7ddca1bb8f4" class="src_link" title="spec/board_spec.rb">spec/board_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>75</td>
-        <td>44</td>
-        <td>44</td>
+        <td>18</td>
+        <td>11</td>
+        <td>11</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.2</td>
       </tr>
       
     </tbody>
@@ -99,11 +89,11 @@
         <div class="source_table" id="1669c0e33815089e46c4f38beffac39f83a8b86c">
   <div class="header">
     <h3>board.rb</h3>
-    <h4><span class="red">71.43 %</span> covered</h4>
+    <h4><span class="yellow">85.71 %</span> covered</h4>
     <div>
       <b>7</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -128,8 +118,8 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="4">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
           <code class="ruby">    @board = []</code>
         </li>
@@ -176,8 +166,8 @@
           <code class="ruby">  def update(guess, response)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">    @board &lt;&lt; guess.to_s + &#39; - &#39; + response.to_s</code>
         </li>
@@ -199,818 +189,13 @@
 </div>
 
       
-        <div class="source_table" id="1d4f270c60187661eaab98bd407e6536e14f641d">
+        <div class="source_table" id="d3184b20724fd5916dad1971d978c7ddca1bb8f4">
   <div class="header">
-    <h3>mastermind.rb</h3>
-    <h4><span class="red">77.33 %</span> covered</h4>
-    <div>
-      <b>75</b> relevant lines. 
-      <span class="green"><b>58</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="never" data-hits="" data-linenumber="1">
-          
-          
-          <code class="ruby"># Command Line Mastermind Game</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;./board.rb&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class Mastermind</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  attr_reader :player_score, :master_score, :remaining_guesses,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">              :game_count, :board, :guess_count, :guess</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def initialize</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="9">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    set_master_code</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="10">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    reset_board</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="11">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    reset_scores</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="12">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    reset_guess_count</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="13">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    display_rules</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="14">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    start_game</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def reset_guess_count</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="18">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    @guess_count = 0</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def set_master_code</code>
-        </li>
-      
-        <li class="covered" data-hits="55" data-linenumber="22">
-          <span class="hits">55</span>
-          
-          <code class="ruby">    @master_code = Array.new(4) { rand(2...8) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def reset_scores</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="26">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    @player_score = 0</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="27">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    @master_score = 0</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="28">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    @win = false</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def reset_board</code>
-        </li>
-      
-        <li class="covered" data-hits="22" data-linenumber="32">
-          <span class="hits">22</span>
-          
-          <code class="ruby">    @board = Board.new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def display_rules</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="36">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    puts %{</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">      Welcome to Mastermind!</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">      A 4 letter code has been set by the mastermind.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">      You win if you can guess the 4 letter code in 12 turns.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">      After each guess, the mastermind will return the numbers 0 or 1.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">      Each &quot;1&quot; indicates that one of the guessed numbers is correct, but in the wrong place.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">      Each &quot;2&quot; indicates that one of the guessed numbers is correct and in the correct place. </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby">      You may guess any value between 2 - 7 inclusive.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">      Goodluck!!&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby">    }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def update_game_count</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="50">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    @game_count.nil? ? @game_count = 1 : @game_count += 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def check_guess_valid?</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="54">
-          <span class="hits">6</span>
-          
-          <code class="ruby">    (@guess.length == 4) &amp;&amp; (@guess.count { |e| e.between?(2,8) } == 4)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def start_game</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="58">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    reset_board</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="59">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    update_game_count</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="60">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    if check_ready?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="61">
-          
-          
-          <code class="ruby">      until game_over?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="62">
-          
-          
-          <code class="ruby">        prompt_guess</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="63">
-          
-          
-          <code class="ruby">        next unless check_guess_valid?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="65">
-          
-          
-          <code class="ruby">        get_response</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="66">
-          
-          
-          <code class="ruby">        board.update(@guess, @response)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="67">
-          
-          
-          <code class="ruby">        board.print</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="68">
-          
-          
-          <code class="ruby">        output_remaining_guesses</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="69">
-          
-          
-          <code class="ruby">        check_win</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="71">
-          
-          
-          <code class="ruby">      determine_winner</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="74">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def determine_winner</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="76">
-          
-          
-          <code class="ruby">    if @win</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="77">
-          
-          
-          <code class="ruby">      print &quot;HOORAY! You cracked the code in #{guess_count} guesses!&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="78">
-          
-          
-          <code class="ruby">      @player_score += 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="79">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="80">
-          
-          
-          <code class="ruby">      puts &#39;Mastermind has out master-minded you... &#39; \</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby">            &quot;The code was #{@master_code}... Better luck next time!&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="82">
-          
-          
-          <code class="ruby">      @master_score += 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="84">
-          
-          
-          <code class="ruby">    puts &quot;Player Score: #{player_score}&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="85">
-          
-          
-          <code class="ruby">    puts &quot;Mastermind Score:  #{master_score}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="86">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="87">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="88">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def check_win</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="89">
-          
-          
-          <code class="ruby">    @win = @response.length == 4 &amp;&amp; @response.uniq == [1]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="90">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="91">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def game_over?</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="93">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @win || @guess_count &gt;= 12</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="95">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def check_ready?</code>
-        </li>
-      
-        <li class="covered" data-hits="12" data-linenumber="97">
-          <span class="hits">12</span>
-          
-          <code class="ruby">    puts &#39;Are you ready to play? (Y/N)&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="12" data-linenumber="98">
-          <span class="hits">12</span>
-          
-          <code class="ruby">    user_input = gets.chomp.downcase</code>
-        </li>
-      
-        <li class="covered" data-hits="12" data-linenumber="99">
-          <span class="hits">12</span>
-          
-          <code class="ruby">    return true if user_input == &#39;y&#39; || user_input == &#39;yes&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="100">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    return false</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="103">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def prompt_guess</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="104">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    puts &#39;Please input a 4 digit code with numbers that are between 2 and 7. (i.e. 4532)&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="105">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    @guess = gets.chomp.split(&#39;&#39;).map(&amp;:to_i)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="106">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="108">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def get_response</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="109">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    puts &#39;The Mastermind is responding. . .&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="110">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    sleep 0.5</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="111">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @response = analyze_input.shuffle</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="112">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="113">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="114">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def output_remaining_guesses</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="115">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @guess_count += 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="116">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @remaining_guesses = 12 - @guess_count</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="117">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    puts &quot;You have #{remaining_guesses} guesses left&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="118">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="119">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="120">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def analyze_input</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="121">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @response = []</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="122">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @master_code.each_with_index do |code, idx|</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="123">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      if code == @guess[idx]</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="124">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        @response &lt;&lt; 1 # code and position correct</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="125">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      elsif @master_code.include?(@guess[idx]) &amp;&amp; @guess.count(@guess[idx]) == 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="126">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        @response &lt;&lt; 0 # code correct, but not position</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="127">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="128">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="129">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @response</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="130">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="131">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="81b678c38c700960af289f1754e78af4bffe5e07">
-  <div class="header">
-    <h3>spec/mastermind_spec.rb</h3>
+    <h3>spec/board_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>44</b> relevant lines. 
-      <span class="green"><b>44</b> lines covered</span> and
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1021,7 +206,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;./mastermind.rb&#39;</code>
+          <code class="ruby">require &#39;./board.rb&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -1033,13 +218,13 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">describe Mastermind do</code>
+          <code class="ruby">describe Board do</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="4">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
-          <code class="ruby">  let(:game) { Mastermind.new }</code>
+          <code class="ruby">  let(:board) { Board.new }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1051,418 +236,76 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  before do</code>
+          <code class="ruby">  it &#39;creates an empty board upon initalization&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="7">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          <code class="ruby">    allow($stdout).to receive(:write)</code>
+          <code class="ruby">    current_board = board.instance_variable_get(:@board)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    expect(current_board).to eq([])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="10">
           
-          <code class="ruby">  describe &#39;#initialize&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;after a new game is initialized&#39; do</code>
+          <code class="ruby">  it &#39;updates the board with player guess and response&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;creates a random 4 unit code of colors&#39; do</code>
+          <code class="ruby">    player_guess = [2, 4, 5, 6]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(game.instance_variable_defined?(:@master_code)).to eq(true)</code>
+          <code class="ruby">    response = [1, 0]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">    expectation = player_guess.to_s + &#39; - &#39; + response.to_s</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(board.update(player_guess, response)).to eq([expectation])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &#39;creates an empty board&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(game.instance_variable_defined?(:@board)).to eq(true)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &#39;sets the scores to 0&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(game.player_score).to eq(0)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(game.master_score).to eq(0)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &#39;starts a new game and updates game count&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(game.game_count).to eq(1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &#39;#start_game&#39; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;prompts the user to enter yes if they are ready&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="34">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      allow(game).to receive(:gets) { &#39;y&#39; }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.check_ready?).to eq(true)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;checks if the guess is valid&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="39">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      allow(game).to receive(:gets) { &#39;2345&#39; }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.prompt_guess).to eq([2, 3, 4, 5])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.check_guess_valid?).to eq(true)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;returns the mastermind\&#39;s response to a valid guess&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="45">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      allow(game).to receive(:gets) { &#39;5764&#39; }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.prompt_guess).to eq([5, 7, 6, 4])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.get_response).to eq(nil).or include(1).or include(0)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;prompts the user for another answer if the guess is invalid&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="51">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      allow(game).to receive(:gets) { &#39;2&#39; }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.prompt_guess).to eq([2])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.check_guess_valid?).to eq(false)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;is game over if the guess count exceeds 12&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      game.instance_variable_set(:@guess_count, 12)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      game.prompt_guess</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.game_over?).to eq(true)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="62">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;is not game over if the guess count is less than 12&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      game.instance_variable_set(:@guess_count, 1)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      game.prompt_guess</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="65">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.game_over?).to eq(false)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="68">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;outputs guesses left out of 12&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="69">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      game.instance_variable_set(:@guess_count, 2)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="70">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      game.output_remaining_guesses</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="71">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(game.remaining_guesses).to eq(9)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="74">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">end</code>

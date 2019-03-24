@@ -29,7 +29,6 @@ describe Mastermind do
   end
 
   describe '#start_game' do
-      
     it 'prompts the user to enter yes if they are ready' do
       allow(game).to receive(:gets) { 'y' }
       expect(game.check_ready?).to eq(true)
@@ -72,4 +71,18 @@ describe Mastermind do
     end
 
   end
+
+  describe '#determine_winner' do
+    it 'increases the player score if the player wins' do
+      game.instance_variable_set(:@win, true)
+      game.determine_winner
+      expect(game.player_score).to eq(1)
+    end
+
+    it 'increases the master score if the player loses' do
+      game.instance_variable_set(:@win, false)
+      game.determine_winner
+      expect(game.master_score).to eq(1)
+    end
+  end 
 end

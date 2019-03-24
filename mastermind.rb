@@ -1,6 +1,8 @@
 # Command Line Mastermind Game
+require './board.rb'
+
 class Mastermind
-  attr_reader :player_score, :master_score, :player_guess,
+  attr_reader :player_score, :master_score, :remaining_guesses,
               :game_count, :board, :guess_count, :guess
 
   def initialize
@@ -23,12 +25,11 @@ class Mastermind
   def reset_scores
     @player_score = 0
     @master_score = 0
+    @win = false
   end
 
   def reset_board
-    @board = []
-    # @board = Array.new(12) { Array.new(4) }
-    @win = false
+    @board = Board.new
   end
 
   def display_rules
@@ -54,6 +55,7 @@ class Mastermind
   end
 
   def start_game
+    reset_board
     update_game_count
     if check_ready?
       until game_over?
@@ -61,8 +63,9 @@ class Mastermind
         next unless check_guess_valid?
 
         get_response
-        update_board
-        print_board
+        board.update(@guess, @response)
+        board.print
+        output_remaining_guesses
         check_win
       end
       determine_winner
@@ -75,7 +78,7 @@ class Mastermind
       @player_score += 1
     else
       puts 'Mastermind has out master-minded you... ' \
-            "The code was #{master_code}... Better luck next time!"
+            "The code was #{@master_code}... Better luck next time!"
       @master_score += 1
     end
     puts "Player Score: #{player_score}"
@@ -108,20 +111,10 @@ class Mastermind
     @response = analyze_input.shuffle
   end
 
-  def print_board
-    puts board
-    print ''
-  end
-
-  def output_guesses_left
+  def output_remaining_guesses
     @guess_count += 1
-    guesses_left =  12 - @guess_count
-    puts "You have #{guesses_left} guesses left"
-  end
-
-  def update_board
-    @board << @guess.to_s + ' - ' + @response.to_s
-    output_guesses_left
+    @remaining_guesses = 12 - @guess_count
+    puts "You have #{remaining_guesses} guesses left"
   end
 
   def analyze_input

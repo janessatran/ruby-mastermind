@@ -50,7 +50,7 @@ class Mastermind
   end
 
   def check_guess_valid?
-    (guess.length == 4) && (guess.count { |e| e.between?(2,8) } == 4)
+    (@guess.length == 4) && (@guess.count { |e| e.between?(2,8) } == 4)
   end
 
   def start_game
@@ -58,13 +58,12 @@ class Mastermind
     if check_ready?
       until game_over?
         prompt_guess
-        if check_guess_valid?(@guess)
-          get_response
-          update_board
-          print_board
-        else
-          prompt_guess
-        end
+        next unless check_guess_valid?
+
+        get_response
+        update_board
+        print_board
+        check_win
       end
       determine_winner
     end
@@ -72,27 +71,28 @@ class Mastermind
 
   def determine_winner
     if @win
-      puts 'HOORAY! YOU CRACKED THE CODE'
-      puts "in #{guess_count} tries!"
+      print "HOORAY! You cracked the code in #{guess_count} guesses!"
       @player_score += 1
     else
-      puts 'Mastermind has out master-minded you... :('
-      puts @master_code
-      puts '... Better luck next time!'
+      puts 'Mastermind has out master-minded you... ' \
+            "The code was #{master_code}... Better luck next time!"
       @master_score += 1
     end
-    puts 'Player Score, Mastermind Score'
-    puts "#{player_score}, #{master_score}"
+    puts "Player Score: #{player_score}"
+    puts "Mastermind Score:  #{master_score}"
+  end
+
+  def check_win
+    @win = @response.length == 4 && @response.uniq == [1]
   end
 
   def game_over?
-    @response.length == 4 && @response.uniq == [1] || @guess_count >= 12
+    @win || @guess_count >= 12
   end
 
   def check_ready?
     puts 'Are you ready to play? (Y/N)'
     user_input = gets.chomp.downcase
-    puts user_input
     return true if user_input == 'y' || user_input == 'yes'
     return false
   end
@@ -120,7 +120,7 @@ class Mastermind
   end
 
   def update_board
-    @board << @guess.to_s + ' - ' +  @response.to_s
+    @board << @guess.to_s + ' - ' + @response.to_s
     output_guesses_left
   end
 
@@ -133,6 +133,6 @@ class Mastermind
         @response << 0 # code correct, but not position
       end
     end
+    @response
   end
-  
 end
